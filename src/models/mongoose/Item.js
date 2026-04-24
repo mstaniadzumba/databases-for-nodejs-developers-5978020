@@ -11,6 +11,8 @@ const ItemSchema = new mongoose.Schema(
         timestamps: true
 });
 
-
+ItemSchema.index({ tags: 1 }); //the 1 means ascending order
+ItemSchema.index({ name: 1 });
+ItemSchema.index({ name: "text"});
 
 export const Item = mongoose.model("Item", ItemSchema);
